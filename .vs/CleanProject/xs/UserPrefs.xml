@@ -1,0 +1,51 @@
+﻿<Properties StartupConfiguration="{4DDF67D2-A955-4F23-AD6F-6AB2B48CA6EA}|CleanProject">
+  <MonoDevelop.Ide.ItemProperties.src.CleanProject.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CleanProject/Appsettings.json">
+    <Files>
+      <File FileName="CleanProject/Program.cs" Line="21" Column="25" />
+      <File FileName="CleanProject/Controllers/EmployeeController.cs" Line="32" Column="10" />
+      <File FileName="CleanProject.Application/Middleware/ExceptionMiddleware.cs" Line="52" Column="81" />
+      <File FileName="CleanProject.Domain/Validator/Validator.cs" Line="33" Column="10" />
+      <File FileName="CleanProject.Persistance/DependancyInjection.cs" Line="1" Column="1" />
+      <File FileName="CleanProject/Appsettings.json" Line="12" Column="2" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CleanProject" expanded="True">
+            <Node name="src" expanded="True">
+              <Node name="CleanProject.API" expanded="True">
+                <Node name="Controllers" expanded="True" />
+                <Node name="Appsettings.json" selected="True" />
+              </Node>
+              <Node name="CleanProject.Application" expanded="True">
+                <Node name="Dependencies" expanded="True" />
+                <Node name="Middleware" expanded="True" />
+                <Node name="Models" expanded="True" />
+              </Node>
+              <Node name="CleanProject.Domain" expanded="True">
+                <Node name="Validator" expanded="True" />
+              </Node>
+              <Node name="CleanProject.Persistance" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" relfile="CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" line="15" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Appsettings.json" relfile="CleanProject/Appsettings.json" line="13" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Validator/Validator.cs" relfile="CleanProject.Domain/Validator/Validator.cs" line="22" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="40" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="41" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+</Properties>

@@ -1,0 +1,15 @@
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/bin/Debug/net6.0/CleanProject.Application.deps.json
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/bin/Debug/net6.0/CleanProject.Application.dll
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/bin/Debug/net6.0/CleanProject.Application.pdb
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/bin/Debug/net6.0/CleanProject.Domain.dll
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/bin/Debug/net6.0/CleanProject.Domain.pdb
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.csproj.AssemblyReference.cache
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.AssemblyInfoInputs.cache
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.AssemblyInfo.cs
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.csproj.CoreCompileInputs.cache
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.csproj.CopyComplete
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.dll
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/refint/CleanProject.Application.dll
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/CleanProject.Application.pdb
+/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/obj/Debug/net6.0/ref/CleanProject.Application.dll
