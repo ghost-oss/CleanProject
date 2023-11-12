@@ -1,15 +1,31 @@
 ﻿<Properties StartupConfiguration="{4DDF67D2-A955-4F23-AD6F-6AB2B48CA6EA}|CleanProject">
-  <MonoDevelop.Ide.ItemProperties.src.CleanProject.API PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CleanProject/Appsettings.json">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" relfile="CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" line="15" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Appsettings.json" relfile="CleanProject/Appsettings.json" line="13" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Validator/Validator.cs" relfile="CleanProject.Domain/Validator/Validator.cs" line="22" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="48" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Persistance/Context/ApplicationDbContext.cs" relfile="CleanProject.Persistance/Context/ApplicationDbContext.cs" line="26" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Middleware/ExceptionMiddleware.cs" relfile="CleanProject.Application/Middleware/ExceptionMiddleware.cs" line="28" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQueryHandler.cs" relfile="CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQueryHandler.cs" line="21" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQueryHandler.cs" relfile="CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQueryHandler.cs" line="19" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="34" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" relfile="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" line="17" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Persistance/DependancyInjection.cs" relfile="CleanProject.Persistance/DependancyInjection.cs" line="17" column="1" />
+    <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" relfile="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" line="19" column="1" />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CleanProject/Controllers/EmployeeController.cs">
     <Files>
-      <File FileName="CleanProject/Program.cs" Line="21" Column="25" />
-      <File FileName="CleanProject/Controllers/EmployeeController.cs" Line="32" Column="10" />
-      <File FileName="CleanProject.Application/Middleware/ExceptionMiddleware.cs" Line="52" Column="81" />
-      <File FileName="CleanProject.Domain/Validator/Validator.cs" Line="33" Column="10" />
-      <File FileName="CleanProject.Persistance/DependancyInjection.cs" Line="1" Column="1" />
-      <File FileName="CleanProject/Appsettings.json" Line="12" Column="2" />
+      <File FileName="CleanProject/Program.cs" Line="7" Column="34" />
+      <File FileName="CleanProject/Controllers/EmployeeController.cs" Line="33" Column="10" />
+      <File FileName="CleanProject/Appsettings.json" Line="10" Column="44" />
+      <File FileName="CleanProject/Dockerfile" Line="11" Column="1" />
+      <File FileName="CleanProject/Properties/launchSettings.json" Line="18" Column="34" />
+      <File FileName="docker-compose.yml" Line="1" Column="1" />
+      <File FileName="CleanProject.Persistance/Repositories/EmployeeRespository.cs" Line="14" Column="10" />
+      <File FileName="CleanProject.Persistance/Repositories/DepartmentRepository.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,19 +33,38 @@
           <Node name="CleanProject" expanded="True">
             <Node name="src" expanded="True">
               <Node name="CleanProject.API" expanded="True">
-                <Node name="Controllers" expanded="True" />
-                <Node name="Appsettings.json" selected="True" />
+                <Node name="Controllers" expanded="True">
+                  <Node name="EmployeeController.cs" selected="True" />
+                </Node>
+                <Node name="Properties" expanded="True" />
+                <Node name="Appsettings.json" expanded="True" />
               </Node>
               <Node name="CleanProject.Application" expanded="True">
-                <Node name="Dependencies" expanded="True" />
+                <Node name="Abstractions" expanded="True">
+                  <Node name="Persistance" expanded="True" />
+                </Node>
+                <Node name="Features" expanded="True">
+                  <Node name="Employees" expanded="True">
+                    <Node name="Commands" expanded="True" />
+                    <Node name="Queries" expanded="True" />
+                  </Node>
+                </Node>
                 <Node name="Middleware" expanded="True" />
                 <Node name="Models" expanded="True" />
               </Node>
               <Node name="CleanProject.Domain" expanded="True">
+                <Node name="Common" expanded="True" />
+                <Node name="Entities" expanded="True" />
                 <Node name="Validator" expanded="True" />
               </Node>
-              <Node name="CleanProject.Persistance" expanded="True" />
+              <Node name="CleanProject.Persistance" expanded="True">
+                <Node name="Context" expanded="True" />
+                <Node name="EntityConfigurations" expanded="True" />
+                <Node name="Migrations" expanded="True" />
+                <Node name="Repositories" expanded="True" />
+              </Node>
             </Node>
+            <Node name="docker-compose" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -38,14 +73,6 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" relfile="CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" line="15" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Appsettings.json" relfile="CleanProject/Appsettings.json" line="13" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Validator/Validator.cs" relfile="CleanProject.Domain/Validator/Validator.cs" line="22" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="40" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="41" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.src.CleanProject.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

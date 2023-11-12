@@ -1,5 +1,7 @@
 ﻿using System;
+using CleanProject.Application.Abstractions.Persistance;
 using CleanProject.Persistance.Context;
+using CleanProject.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,6 +16,8 @@ namespace CleanProject.Persistance
             {
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
+
+            services.AddScoped<IEmployeeRepository, EmployeeRespository>();
             return services;
         }
     }

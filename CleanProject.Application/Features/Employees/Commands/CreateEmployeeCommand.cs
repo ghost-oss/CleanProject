@@ -4,7 +4,7 @@ using MediatR;
 
 namespace CleanProject.Application.Features.Employees.Commands
 {
-    public class CreateEmployeeCommand : IRequest<int>
+    public class CreateEmployeeCommand : IRequest
     {
         public EmployeeDTO Employee { get; set; }
 

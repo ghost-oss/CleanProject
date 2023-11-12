@@ -278,3 +278,4 @@
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/CleanProject.pdb
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/CleanProject.API.genruntimeconfig.cache
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/ref/CleanProject.dll
+/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.Production.json

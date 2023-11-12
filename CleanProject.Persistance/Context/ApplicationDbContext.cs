@@ -13,6 +13,9 @@ namespace CleanProject.Persistance.Context
         {
         }
 
+        public DbSet<Employee> Employee { get; set; }
+        public DbSet<Department> Department { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetAssembly(typeof(ApplicationDbContext)));
@@ -42,4 +45,3 @@ namespace CleanProject.Persistance.Context
         }
     }
 }
-

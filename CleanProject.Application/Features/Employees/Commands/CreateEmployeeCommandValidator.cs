@@ -16,6 +16,10 @@ namespace CleanProject.Application.Features.Employees.Commands
             .NotEmpty()
             .WithMessage("{PropertyName} cannot be empty");
 
+            RuleFor(x => x.DepartmentId)
+                .NotEqual(0)
+                .WithMessage("{PropertyName} cannot be 0, please provide a valid department ID");
+
             RuleFor(x => x.DateOfBirth)
                 .Must(x => DateTime.TryParse(x, out _))
                 .WithMessage("{PropertyName} is an invalid date");
