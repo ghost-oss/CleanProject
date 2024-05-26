@@ -24,6 +24,7 @@
     <None Remove="Middleware\" />
     <None Remove="Microsoft.Extensions.Configuration.UserSecrets" />
     <None Remove="Newtonsoft.Json" />
+    <None Remove="Behaviours\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Abstractions\" />
@@ -35,6 +36,7 @@
     <Folder Include="Features\Employees\Commands\" />
     <Folder Include="Features\Employees\Queries\" />
     <Folder Include="Middleware\" />
+    <Folder Include="Behaviours\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0" />

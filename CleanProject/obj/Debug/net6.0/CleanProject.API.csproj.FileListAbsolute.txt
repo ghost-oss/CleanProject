@@ -1,5 +1,4 @@
-/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.Development.json
-/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.json
+/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.Production.json
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/CleanProject
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/CleanProject.deps.json
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/CleanProject.runtimeconfig.json
@@ -278,4 +277,5 @@
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/CleanProject.pdb
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/CleanProject.API.genruntimeconfig.cache
 /Users/sahilramanuj/Projects/CleanProject/CleanProject/obj/Debug/net6.0/ref/CleanProject.dll
-/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.Production.json
+/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.Development.json
+/Users/sahilramanuj/Projects/CleanProject/CleanProject/bin/Debug/net6.0/Appsettings.json

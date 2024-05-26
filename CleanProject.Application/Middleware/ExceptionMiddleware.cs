@@ -1,11 +1,7 @@
-﻿using System;
-using System.Net;
-using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using Microsoft.Extensions.Logging;
+﻿using System.Net;
 using FluentValidation;
+using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace CleanProject.Application.Middleware
 {
@@ -25,7 +21,7 @@ namespace CleanProject.Application.Middleware
                 await next(httpContext);
             }
             catch(Exception ex)
-            {
+         {
                 await ConvertException(httpContext, ex);
             }
         }

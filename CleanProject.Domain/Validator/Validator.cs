@@ -1,35 +1,38 @@
-﻿using System;
-using FluentValidation;
+﻿using FluentValidation;
 using FluentValidation.Results;
 
 namespace CleanProject.Domain.Validator
 {
-    public interface IValidator<T>
+    public interface ICommonValidator<TRequest>
     {
-        ValidationResult Validate(T typeToValidate, bool throwOnException);
+        Task<ValidationResult[]> ValidateAsync(TRequest typeToValidate, bool throwOnException);
     }
 
-    public class Validator<T> : IValidator<T> where T : class
+    public class Validator<TRequest> : ICommonValidator<TRequest> where TRequest : class
     {
-        private readonly FluentValidation.IValidator<T> validator;
+       public IEnumerable<IValidator<TRequest>> validators;
 
-        public Validator(FluentValidation.IValidator<T> validator)
+        public Validator(IEnumerable<IValidator<TRequest>> validators)
         {
-            this.validator = validator;
+            this.validators = validators;
         }
 
-        public ValidationResult Validate(T typeToValidate, bool throwOnException)
+        public async Task<ValidationResult[]> ValidateAsync(TRequest typeToValidate, bool throwOnException)
         {
-            var validationResult = validator.Validate(typeToValidate);
+            if (!validators.Any())
+            {
+                return new ValidationResult[] { new ValidationResult() };
+            }
 
-            if (!validationResult.IsValid && throwOnException)
+            var validationResults = await Task.WhenAll(validators.Select(v => v.ValidateAsync(typeToValidate)));
+
+
+            if (validationResults.Any(v => !v.IsValid) && throwOnException)
             {
-                throw new ValidationException("Failed Validation", validationResult.Errors);
+                throw new ValidationException("Failed Validation", validationResults.SelectMany(vr => vr.Errors));
             }
-            else
-            {
-                return validationResult;
-            }
+
+            return validationResults;
         }
         
     }

@@ -1,26 +1,27 @@
-﻿using System;
-using System.Reflection;
-using FluentValidation;
-using CleanProject.Application.Models;
-using Microsoft.Extensions.DependencyInjection;
-using CleanProject.Application.Features.Employees.Commands;
+﻿using CleanProject.Application.Behaviours;
+using CleanProject.Application.Middleware;
 using CleanProject.Domain.Validator;
+using FluentValidation;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.DependencyInjection;
 namespace CleanProject.Application
 {
     public static class DependancyInjection
     {
         public static IServiceCollection RegisterApplication(this IServiceCollection services)
         {
+            //Register Mediator RequestHandlers
             services.AddMediatR(config =>
             {
-                config.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
+                config.RegisterServicesFromAssembly(typeof(DependancyInjection).Assembly);
+                config.AddOpenBehavior(typeof(ValidationPipelineBehaviour<,>));
             });
 
             //Register all concrete implementation of type IValidator<T> within this assembly
             services.AddValidatorsFromAssemblyContaining(typeof(DependancyInjection));
 
             //Register generic validator 
-            services.AddScoped(typeof(Domain.Validator.IValidator<>), typeof(Validator<>));
+            services.AddScoped(typeof(ICommonValidator<>), typeof(Validator<>));
 
             return services;
         }
