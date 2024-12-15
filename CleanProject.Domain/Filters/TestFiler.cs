@@ -1,22 +1,22 @@
-﻿using System;
-using Microsoft.AspNetCore.Mvc.Controllers;
-using Microsoft.AspNetCore.Mvc.Filters;
+﻿using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.Extensions.Logging;
 
 namespace CleanProject.Domain.Filters
 {
-    public class TestFiler : IActionFilter
+    public class TestFilter : ActionFilterAttribute
     {
-        public TestFiler()
+        private readonly ILogger logger;
+        public TestFilter(ILogger<TestFilter> logger)
         {
+            this.logger = logger;
+        }
+        public override void OnActionExecuted(ActionExecutedContext context)
+        {
+            logger.LogWarning("ACTION EXECUTED");
         }
 
-        public void OnActionExecuted(ActionExecutedContext context)
+        public override void OnActionExecuting(ActionExecutingContext context)
         {
-        }
-
-        public void OnActionExecuting(ActionExecutingContext context)
-        {
-            throw new NotImplementedException();
         }
     }
 }

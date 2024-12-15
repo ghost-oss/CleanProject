@@ -1,65 +1,74 @@
 ﻿<Properties StartupConfiguration="{4DDF67D2-A955-4F23-AD6F-6AB2B48CA6EA}|CleanProject">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.src.CleanProject.API PreferredExecutionTarget="/Applications/Safari.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="CleanProject.Persistance/DependancyInjection.cs">
     <Files>
-      <File FileName="CleanProject.Application/Middleware/ExceptionMiddleware.cs" Line="20" Column="14" IsPinned="True" />
-      <File FileName="CleanProject.Persistance/Repositories/EmployeeRespository.cs" Line="20" Column="1" />
-      <File FileName="CleanProject.Domain/Validator/Validator.cs" Line="35" Column="38" />
-      <File FileName="CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" Line="17" Column="38" />
+      <File FileName="CleanProject.Domain/Filters/TestFiler.cs" />
+      <File FileName="CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQueryHandler.cs" />
+      <File FileName="CleanProject/Controllers/EmployeeController.cs" Line="49" Column="76" />
+      <File FileName="CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" Line="17" Column="37" />
+      <File FileName="CleanProject.Domain/Validator/Validator.cs" Line="32" Column="37" />
+      <File FileName="CleanProject.Persistance/Repositories/EmployeeRespository.cs" Line="1" Column="1" />
+      <File FileName="CleanProject/Appsettings.Development.json" />
+      <File FileName="CleanProject.Persistance/Context/ApplicationDbContext.cs" Line="30" Column="14" />
+      <File FileName="CleanProject/Appsettings.json" />
+      <File FileName="CleanProject.Persistance/DependancyInjection.cs" Line="1" Column="1" />
+      <File FileName="CleanProject/Appsettings.Production.json" />
+      <File FileName="CleanProject.Application/DependancyInjection.cs" />
+      <File FileName="docker-compose.yml" Line="16" Column="19" />
       <File FileName="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommand.cs" Line="1" Column="1" />
-      <File FileName="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" Line="26" Column="53" />
-      <File FileName="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandValidator.cs" Line="17" Column="45" />
-      <File FileName="CleanProject/Program.cs" Line="15" Column="66" />
-      <File FileName="CleanProject/Dockerfile" Line="1" Column="1" />
-      <File FileName="CleanProject.Application/Middleware/MiddlewareExtensions.cs" Line="15" Column="1" />
-      <File FileName="CleanProject.Application/DependancyInjection.cs" Line="29" Column="2" />
-      <File FileName="CleanProject/Controllers/EmployeeController.cs" Line="17" Column="10" />
+      <File FileName="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandHandler.cs" Line="27" Column="16" />
+      <File FileName="CleanProject.Application/Features/Employees/Queries/GetEmployeesQuery.cs" />
+      <File FileName="CleanProject.Application/Features/Employees/Queries/GetEmployeesQueryHandler.cs" />
+      <File FileName="CleanProject.Application/Models/EmployeeDto.cs" />
+      <File FileName="CleanProject.Application/CleanProject.Application.csproj" />
+      <File FileName="CleanProject.Application/Features/Employees/Commands/CreateEmployeeCommandValidator.cs" Line="1" Column="1" />
+      <File FileName="CleanProject.Application/Features/Employees/Queries/GetEmployeeByIdQuery.cs" />
+      <File FileName="CleanProject.Persistance/Repositories/DepartmentRepository.cs" Line="1" Column="1" />
+      <File FileName="CleanProject.Persistance/EntityConfigurations/EmployeeConfigurations.cs" Line="1" Column="1" />
+      <File FileName="CleanProject.Application/Middleware/MiddlewareExtensions.cs" Line="10" Column="38" />
+      <File FileName="CleanProject/Dockerfile" Line="10" Column="1" />
+      <File FileName="CleanProject/Program.cs" Line="1" Column="1" />
+      <File FileName="CleanProject.Persistance/EntityConfigurations/DepartmentConfigurations.cs" Line="29" Column="1" />
+      <File FileName="CleanProject.Domain/Entities/ApplicationUser.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CleanProject">
             <Node name="src" expanded="True">
-              <Node name="CleanProject.API">
+              <Node name="CleanProject.API" expanded="True">
                 <Node name="Controllers" expanded="True" />
+                <Node name="Properties" expanded="True" />
+                <Node name="Appsettings.json" expanded="True" />
               </Node>
-              <Node name="CleanProject.Application">
-                <Node name="Behaviours" expanded="True">
-                  <Node name="ValidationPipelineBehaviour.cs" selected="True" />
-                </Node>
-                <Node name="Features" expanded="True">
-                  <Node name="Employees" expanded="True">
-                    <Node name="Commands" expanded="True" />
-                    <Node name="Queries" expanded="True" />
-                  </Node>
-                </Node>
-                <Node name="Models" expanded="True" />
-              </Node>
-              <Node name="CleanProject.Domain">
+              <Node name="CleanProject.Domain" expanded="True">
+                <Node name="Entities" expanded="True" />
                 <Node name="Filters" expanded="True" />
                 <Node name="Validator" expanded="True" />
               </Node>
-              <Node name="CleanProject.Persistance">
+              <Node name="CleanProject.Persistance" expanded="True">
+                <Node name="Context" expanded="True" />
+                <Node name="EntityConfigurations" expanded="True" />
                 <Node name="Repositories" expanded="True" />
+                <Node name="DependancyInjection.cs" selected="True" />
               </Node>
             </Node>
+            <Node name="docker-compose" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.src.CleanProject.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Persistance/Repositories/EmployeeRespository.cs" relfile="CleanProject.Persistance/Repositories/EmployeeRespository.cs" line="20" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" relfile="CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" line="16" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" relfile="CleanProject.Application/Behaviours/ValidationPipelineBehaviour.cs" line="11" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="40" column="1" />
-      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Validator/Validator.cs" relfile="CleanProject.Domain/Validator/Validator.cs" line="21" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject/Controllers/EmployeeController.cs" relfile="CleanProject/Controllers/EmployeeController.cs" line="62" column="1" />
       <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Application/Middleware/ExceptionMiddleware.cs" relfile="CleanProject.Application/Middleware/ExceptionMiddleware.cs" line="30" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Filters/TestFiler.cs" relfile="CleanProject.Domain/Filters/TestFiler.cs" line="14" column="1" />
+      <Breakpoint file="/Users/sahilramanuj/Projects/CleanProject/CleanProject.Domain/Filters/TestFiler.cs" relfile="CleanProject.Domain/Filters/TestFiler.cs" line="15" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.docker-compose PreferredExecutionTarget="MonoDevelop.Default" />
-  <MultiItemStartupConfigurations />
 </Properties>
