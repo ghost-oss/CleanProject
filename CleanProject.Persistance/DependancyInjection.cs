@@ -1,5 +1,5 @@
 ﻿using System;
-using CleanProject.Application.Abstractions.Persistance;
+using CleanProject.Domain.Interfaces;
 using CleanProject.Persistance.Context;
 using CleanProject.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;

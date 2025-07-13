@@ -1,6 +1,7 @@
 ﻿using System;
 using CleanProject.Application.Models;
 using FluentValidation;
+using FluentValidation.Results;
 
 namespace CleanProject.Application.Features.Employees.Commands
 {
@@ -8,29 +9,17 @@ namespace CleanProject.Application.Features.Employees.Commands
     {
         public CreateEmployeeCommandValidator()
         {
-            RuleFor(x => x.Employee.FirstName)
-                .NotEmpty()
-                .WithMessage("{PropertyName} cannot be empty");
-
-            RuleFor(x => x.Employee.LastName)
-            .NotEmpty()
-            .WithMessage("{PropertyName} cannot be empty");
-
-            RuleFor(x => x.Employee.DepartmentId)
-                .NotEqual(0)
-                .WithMessage("{PropertyName} cannot be 0, please provide a valid department ID");
         }
-    }
 
-    public class CreateEmployeeCommandSValidator : AbstractValidator<CreateEmployeeCommand>
-    {
-        public CreateEmployeeCommandSValidator()
+        public override Task<ValidationResult> ValidateAsync(ValidationContext<CreateEmployeeCommand> context, CancellationToken cancellation = new CancellationToken())
         {
-
-            RuleFor(x => x.Employee.DateOfBirth)
-                .Must(x => DateTime.TryParse(x, out _))
-                .WithMessage("{PropertyName} is an invalid date");
+            var data = context.InstanceToValidate.Employee; 
+            
+            context.AddFailure(new ValidationFailure("test", "test"));
+            
+            return base.ValidateAsync(context, cancellation);
         }
     }
+    
 }
 

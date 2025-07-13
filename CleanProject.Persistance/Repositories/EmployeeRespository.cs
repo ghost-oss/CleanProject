@@ -1,8 +1,8 @@
 ﻿using System;
 using CleanProject.Persistance.Context;
 using CleanProject.Domain.Entities;
+using CleanProject.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using CleanProject.Application.Abstractions.Persistance;
 
 namespace CleanProject.Persistance.Repositories
 {

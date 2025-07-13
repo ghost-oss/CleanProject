@@ -1,7 +1,6 @@
-﻿using System;
-using CleanProject.Domain.Entities;
+﻿using CleanProject.Domain.Entities;
 
-namespace CleanProject.Application.Abstractions.Persistance
+namespace CleanProject.Domain.Interfaces
 {
     public interface IEmployeeRepository
     {

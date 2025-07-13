@@ -1,13 +1,22 @@
 ﻿using CleanProject.Application;
 using CleanProject.Persistance;
 using CleanProject.Application.Middleware;
-using CleanProject.Domain.Filters;
+using Serilog;
+using Serilog.Formatting.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//Configure Logging
+/*//Configure Logging
 builder.Logging.ClearProviders(); //Clears all the logging providers created by default via WebApplication.CreateBuilder()
-builder.Logging.AddConsole(); //Adds console logging provider
+builder.Logging.AddConsole(); //Adds console logging provider*/
+
+//Add Serilog Provider 
+builder.Host.UseSerilog((context, loggerConfiguration) =>
+{
+    loggerConfiguration.WriteTo.Console(new JsonFormatter()); //Write to console with Json Format i.e not plain text but structured json object
+    loggerConfiguration.ReadFrom.Configuration(context.Configuration); //Read set up config from IConfiguration (Appsettings) for log levels
+    loggerConfiguration.Enrich.FromLogContext(); // Enriches any global log context properties pushed within the scope
+});
 
 // Add services to the container.
 

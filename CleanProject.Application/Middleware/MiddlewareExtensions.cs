@@ -8,6 +8,7 @@ namespace CleanProject.Application.Middleware
         public static void AddCustomMiddlewareExtensions(this IApplicationBuilder app)
         {
             app.UseMiddleware<ExceptionMiddleware>();
+            app.UseMiddleware<CorrelationIdMiddleware>();
         }
     }
 }

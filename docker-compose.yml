@@ -2,7 +2,7 @@ version: '3.4'
 #Define our services.
 services:
   cleanproject-service: #name of the container which will be displayed.
-    image: clean-application:1.01 #name of the image we are going to create an instance of. If it can't find the image, it will use the 'build' to find the dockerfile and create an image with the specifed 'image' name.
+    image: clean-application:latest #name of the image we are going to create an instance of. If it can't find the image, it will use the 'build' to find the dockerfile and create an image with the specifed 'image' name.
     ports: #This is the equivelent of -p for mapping our external port:container port
      - "1010:80"
     build: #required in case we can't find our image. This will build and create our image

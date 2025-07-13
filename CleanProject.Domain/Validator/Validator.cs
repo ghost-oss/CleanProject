@@ -21,7 +21,7 @@ namespace CleanProject.Domain.Validator
         {
             if (!validators.Any())
             {
-                return new ValidationResult[] { new ValidationResult() };
+                return Array.Empty<ValidationResult>();
             }
 
             var validationResults = await Task.WhenAll(validators.Select(v => v.ValidateAsync(typeToValidate)));

@@ -1,8 +1,9 @@
-﻿using CleanProject.Application.Behaviours;
-using CleanProject.Application.Middleware;
+﻿using CleanProject.Application.Abstractions;
+using CleanProject.Application.Behaviours;
+using CleanProject.Application.Services;
 using CleanProject.Domain.Validator;
 using FluentValidation;
-using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 namespace CleanProject.Application
 {
@@ -22,6 +23,9 @@ namespace CleanProject.Application
 
             //Register generic validator 
             services.AddScoped(typeof(ICommonValidator<>), typeof(Validator<>));
+            
+            services.AddHttpContextAccessor();
+            services.AddScoped<ICorrelationAccessor, CorrelationAccessor>();
 
             return services;
         }

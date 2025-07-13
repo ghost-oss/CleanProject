@@ -1,3 +1,4 @@
+using CleanProject.Application.Abstractions;
 using CleanProject.Application.Features.Employees.Commands;
 using CleanProject.Application.Features.Employees.Queries;
 using CleanProject.Application.Models;
@@ -11,27 +12,23 @@ namespace CleanProject.API.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        public readonly IMediator mediator;
+        private readonly IMediator mediator;
         private readonly ILogger logger;
-        public EmployeeController(IMediator mediator, ILogger<EmployeeController> logger)
+        private readonly ICorrelationAccessor accessor; 
+        public EmployeeController(IMediator mediator, ILogger<EmployeeController> logger, ICorrelationAccessor accessor)
         {
             this.mediator = mediator;
             this.logger = logger;
+            this.accessor = accessor;
         }
 
 
         [HttpGet, Route("test")]
         public IActionResult GetEmployeesTest()
         {
-            List<EmployeeDTO> employees = new List<EmployeeDTO>
-            {
-                new EmployeeDTO { FirstName = "Sahil", DateOfBirth = DateTime.Today.ToString()},
-                new EmployeeDTO { FirstName = "Richard", DateOfBirth = DateTime.Today.ToString()},
-                new EmployeeDTO { FirstName = "Lucas", DateOfBirth = DateTime.Today.ToString()}
+            logger.LogWarning("HEY THERE BUDDY Sallooo!!!!!!");
+            return Ok(accessor.GetCorrelationId());
 
-            };
-
-            return Ok(employees);
         }
 
 
@@ -49,7 +46,7 @@ namespace CleanProject.API.Controllers
             logger.LogWarning("About to retrieve employee information...");
 
             var result = await mediator.Send(new GetEmployeeByIdQuery(id));;
-            if(result == null)
+            if (result == null)
             {
                 return BadRequest("Employee not found.");
             }

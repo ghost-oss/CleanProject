@@ -1,5 +1,5 @@
 ﻿using System;
-using CleanProject.Application.Abstractions.Persistance;
+using CleanProject.Domain.Interfaces;
 using MediatR;
 
 namespace CleanProject.Application.Features.Employees.Commands

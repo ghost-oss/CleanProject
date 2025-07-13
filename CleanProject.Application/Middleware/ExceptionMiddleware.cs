@@ -21,7 +21,7 @@ namespace CleanProject.Application.Middleware
                 await next(httpContext);
             }
             catch(Exception ex)
-         {
+            {
                 await ConvertException(httpContext, ex);
             }
         }
@@ -32,10 +32,9 @@ namespace CleanProject.Application.Middleware
             httpContext.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
             var result = ex.Message;
 
-            if (ex is ValidationException)
+            if (ex is ValidationException validationException)
             {
                 httpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
-                var validationException = ex as ValidationException;
                 result = GetValidationMessageString(validationException);
             }
 
