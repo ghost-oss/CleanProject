@@ -57,10 +57,10 @@ jobs:
         dotnet-version: '6.0'
 
     - name: Restore Dependancies 
-      run: dotnet restore 
+      run: dotnet restore CleanProject.sln
 
     - name: Build App 
-      run: dotnet publish -c Release -o ./publish 
+      run: dotnet publish CleanProject\CleanProject.API.csproj -c Release -o ./publish 
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
