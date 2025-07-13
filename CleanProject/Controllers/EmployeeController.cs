@@ -26,7 +26,7 @@ namespace CleanProject.API.Controllers
         [HttpGet, Route("test")]
         public IActionResult GetEmployeesTest()
         {
-            logger.LogWarning("HEY THERE BUDDY Sallooo!!!!!!");
+            logger.LogWarning("HEY THERE BUDDY Sallooo!!!!!!!");
             return Ok(accessor.GetCorrelationId());
 
         }
