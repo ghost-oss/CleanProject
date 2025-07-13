@@ -27,7 +27,7 @@ namespace CleanProject.API.Controllers
         public IActionResult GetEmployeesTest()
         {
             logger.LogWarning("HEY THERE BUDDY Salloooyyy!!!!!!!");
-            return Ok(accessor.GetCorrelationId());
+            return Ok(accessor.GetCorrelationId() + " Richard");
 
         }
 
