@@ -57,10 +57,10 @@ jobs:
         dotnet-version: '6.0'
 
     - name: Restore Dependancies 
-      uses: dotnet restore 
+      run: dotnet restore 
 
     - name: Build App 
-      uses: dotnet publish -c Release -o ./publish 
+      run: dotnet publish -c Release -o ./publish 
 
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
