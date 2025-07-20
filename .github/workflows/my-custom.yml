@@ -9,7 +9,8 @@ jobs:
     name: print hello world
     runs-on: ubunutu-latest
     
-  steps:
-  - name: Time to print stuff 
-    run: echo "hello world" 
-    shell: bash
+    steps:
+    - name: printstuff 
+      run: echo "hello world"
+      
+
