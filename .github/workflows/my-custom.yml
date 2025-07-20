@@ -1,0 +1,15 @@
+name: my custom worfklow to run
+
+on: 
+  push: 
+    branches: ["main"]
+
+jobs:
+  helloworld: 
+    name: print hello world
+    runs-on: ubunutu-latest
+    
+  steps:
+  - name: Time to print stuff 
+    run: echo "hello world" 
+    shell: bash
