@@ -2,7 +2,7 @@ name: my custom worfklow to run
 
 on: 
   workflow_dispatch: #This event type allows us to have a UI button to manually trigger the workflow rather than automatically run on push for example
-    inputs: #Allows us to define what input parameters to consume when trying to be ran manually
+    inputs: #Allows us to define what input parameters to consume when trying to be ran manually.
       environment:
         description: "Environment to select"
         required: true
