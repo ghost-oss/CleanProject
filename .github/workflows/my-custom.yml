@@ -1,6 +1,6 @@
 name: my custom worfklow to run
 
-on: 
+on: #Specifiy which event types would trigger this workflow to run i.e push/workflow_dispatch. You can listen out to one or more events i.e a manual trigger and a push to the repo
   workflow_dispatch: #This event type allows us to have a UI button to manually trigger the workflow rather than automatically run on push for example.
     inputs: #Allows us to define what input parameters to consume when trying to be ran manually
       environment:
