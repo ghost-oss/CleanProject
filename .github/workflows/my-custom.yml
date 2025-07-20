@@ -1,8 +1,7 @@
 name: my custom worfklow to run
 
 on: 
-  push: 
-    branches: ["main"]
+  workflow_dispatch:
 
 jobs:
   helloworld: 
