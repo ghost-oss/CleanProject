@@ -1,0 +1,34 @@
+#something 
+
+name: PR CI Check
+
+on: 
+  pull_request: #Triggered on a pull requested
+    types:
+      - opened #Whenever a PR gets opened
+      - reopened #Whenever a PR gets closed and reponeed
+      - synchronize #Any new changes merged in 
+      - closed #Need this when a PR is closed but there's some additional checks to ensu
+
+jobs:
+  check-pr-build: 
+    name: Checks Build and Test
+    runs-on: ubuntu-latest 
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Set up .Net Core
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0'
+
+    - name: Restore Dependancies 
+      run: dotnet restore CleanProject.sln
+
+    - name: Build App 
+      run: dotnet publish ./CleanProject/CleanProject.API.csproj -c Release -o ./publish 
+
+    - name: print test
+      run: head ref ${{ github.head_ref }}
