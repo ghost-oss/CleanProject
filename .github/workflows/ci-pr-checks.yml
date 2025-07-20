@@ -29,6 +29,3 @@ jobs:
 
     - name: Build App 
       run: dotnet publish ./CleanProject/CleanProject.API.csproj -c Release -o ./publish 
-
-    - name: print test
-      run: head ref ${{ github.head_ref }}
