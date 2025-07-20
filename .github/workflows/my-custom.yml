@@ -12,12 +12,12 @@ on:
         - UAT
         - Prod
 jobs:
-  helloworld: 
-    name: print hello world
+  my-job-to-execute: 
+    name: print inputs set up
     runs-on: ubuntu-latest 
     
     steps:
     - name: printstuff 
-      run: echo "hello world"
+      run: echo the values consumed are ${{inputs.environment}}
 
 
