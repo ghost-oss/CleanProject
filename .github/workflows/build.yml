@@ -59,7 +59,7 @@ jobs:
       ecr-repository: $ECR_REPOSITORY
       ecs-cluster: $ECS_CLUSTER
       ecs-service: $ECS_SERVICE
-      ecs-task_definition-path: $ECS_TASK_DEFINITION
+      ecs-task-definition-path: $ECS_TASK_DEFINITION
       ecs-container-name: $CONTAINER_NAME
       ecs-container-image: ${{ needs.build-docker-image-push-ecr.outputs.final-image }}
 
