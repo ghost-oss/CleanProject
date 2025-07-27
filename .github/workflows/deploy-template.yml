@@ -1,0 +1,59 @@
+name: Deploy AWS ECS
+
+on:
+  workflow_call:
+    inputs:
+      ecs-cluster: 
+        required: true
+        type: string
+      ecs-service:
+        required: true
+        type: string
+      ecs-task-definition-path: 
+        required: true
+        type: string
+      ecs-container-name:
+        required: true
+        type: string
+      ecs-container-image:
+        required: true
+        type: string
+env: 
+  AWS_REGION: eu-north-1
+
+jobs:
+  deploy-ecs:
+    name: Deploy to AWS ECS
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Consumed Input Log
+      run: |
+        echo ecs cluster - ${{ inputs.ecs-cluster }}
+        echo ecs service - ${{ inputs.ecs-service}}
+        echo task path - ${{ inputs.ecs-task-definition-path }}
+        echo ecs container name - ${{ inputs.ecs-container-name }}
+        echo container image - ${{ inputs.ecs-container-image }}
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+
+    - name: Fill in the new image ID in the Amazon ECS task definition
+      id: task-def
+      uses: aws-actions/amazon-ecs-render-task-definition@v1
+      with:
+        task-definition: ${{ inputs.ecs-task-definition-path }}
+        container-name: ${{ inputs.ecs-container-name }}
+        image: ${{ inputs.ecs-container-image }}
+
+    - name: Deploy Amazon ECS task definition
+      uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+      with:
+        task-definition: ${{ steps.task-def.outputs.task-definition }}
+        service: ${{ inputs.ecs-service }}
+        cluster: ${{ inputs.ecs-cluster }}
+        wait-for-service-stability: true

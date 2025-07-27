@@ -1,4 +1,4 @@
-name: Main Builder Workflow
+name: Build Docker Image
 
 on: 
   workflow_dispatch: 
@@ -17,7 +17,11 @@ jobs:
     runs-on: ubuntu-latest 
 
     outputs:
-      final-image: ${{ steps.build-image.outputs.image }}
+      ecs-container-image: ${{ steps.build-image.outputs.image }}
+      ecs-cluster: ${{ env.ECS_CLUSTER }}
+      ecs-service: ${{ env.ECS_SERVICE }}
+      ecs-task-definition-path: ${{ env.ECS_TASK_DEFINITION }}
+      ecs-container-name: ${{ env.CONTAINER_NAME }}
 
     steps:
     - name: Checkout
@@ -51,7 +55,6 @@ jobs:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         IMAGE_TAG: ${{ github.sha }}
       run: |
-        echo REGISTRY STUFF $ECR_REGISTRY
         docker build -f ./CleanProject/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
@@ -60,11 +63,11 @@ jobs:
     name: Deploy to AWS ECS
     needs: build-docker-image-push-ecr
     uses: ./.github/workflows/shared.yml
+    secrets: inherit #Although we cant inherit ENV and have to pass as output from the previous jobs. Secrets can be inherited
     with:
-      ecr-repository: "${{ ECR_REPOSITORY }}"
-      ecs-cluster: $ECS_CLUSTER
-      ecs-service: $ECS_SERVICE
-      ecs-task-definition-path: $ECS_TASK_DEFINITION
-      ecs-container-name: $CONTAINER_NAME
-      ecs-container-image: ${{ needs.build-docker-image-push-ecr.outputs.final-image }}
+      ecs-cluster: ${{ needs.build-docker-image-push-ecr.outputs.ecs-cluster }}
+      ecs-service: ${{ needs.build-docker-image-push-ecr.outputs.ecs-service}}
+      ecs-task-definition-path:  ${{ needs.build-docker-image-push-ecr.outputs.ecs-task-definition-path }}
+      ecs-container-name: ${{ needs.build-docker-image-push-ecr.outputs.ecs-container-name }}
+      ecs-container-image: ${{ needs.build-docker-image-push-ecr.outputs.ecs-container-image }}
 
