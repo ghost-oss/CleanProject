@@ -61,7 +61,7 @@ jobs:
     needs: build-docker-image-push-ecr
     uses: ./.github/workflows/shared.yml
     with:
-      ecr-repository: $ECR_REPOSITORY
+      ecr-repository: "${{ ECR_REPOSITORY }}"
       ecs-cluster: $ECS_CLUSTER
       ecs-service: $ECS_SERVICE
       ecs-task-definition-path: $ECS_TASK_DEFINITION
