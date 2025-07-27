@@ -1,0 +1,19 @@
+name: Main Builder Workflow
+
+on: 
+  workflow_dispatch: 
+
+jobs:
+  build-docker-image: 
+    name: Builder Application and Docker Image
+    runs-on: ubuntu-latest 
+    
+    steps:
+    - name: printstuff 
+      run: echo some stuff
+
+  deployment-job:
+    name: Something else
+    uses: ./.github/workflows/shared.yml
+    with:
+      my-text: sahil

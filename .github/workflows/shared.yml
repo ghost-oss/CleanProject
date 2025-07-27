@@ -1,0 +1,18 @@
+name: Shared Deployment Workflow
+
+on:
+  workflow_call:
+    inputs:
+      my-text:
+        required: true
+        type: string
+
+jobs:
+  deployment-job:
+    name: Deploying job
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: My test
+      run: echo ${{inputs.my-text}}
+    
