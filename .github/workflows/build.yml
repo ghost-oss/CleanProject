@@ -62,7 +62,7 @@ jobs:
   deploy-ecs:
     name: Deploy to AWS ECS
     needs: build-docker-image-push-ecr
-    uses: ./.github/workflows/shared.yml
+    uses: ./.github/workflows/deploy-template.yml
     secrets: inherit #Although we cant inherit ENV and have to pass as output from the previous jobs. Secrets can be inherited
     with:
       ecs-cluster: ${{ needs.build-docker-image-push-ecr.outputs.ecs-cluster }}
