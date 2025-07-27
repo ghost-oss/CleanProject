@@ -12,7 +12,7 @@ on:
       ecs-service:
         required: true
         type: string
-      ecs-task-definition_path: 
+      ecs-task-definition-path: 
         required: true
         type: string
       ecs-container-name:
