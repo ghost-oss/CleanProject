@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest 
 
     outputs:
-      final-image: ${{steps.build-image.outputs.image}}
+      final-image: ${{ steps.build-image.outputs.image }}
 
     steps:
     - name: Checkout
@@ -53,6 +53,7 @@ jobs:
 
   deploy-ecs:
     name: Deploy to AWS ECS
+    needs: build-docker-image-push-ecr
     uses: ./.github/workflows/shared.yml
     with:
       ecr-repository: $ECR_REPOSITORY
@@ -60,5 +61,5 @@ jobs:
       ecs-service: $ECS_SERVICE
       ecs-task_definition-path: $ECS_TASK_DEFINITION
       ecs-container-name: $CONTAINER_NAME
-      ecs-container-image: ${{steps.build-image.outputs.final-image}}
+      ecs-container-image: ${{ needs.build-docker-image-push-ecr.outputs.final-image }}
 
