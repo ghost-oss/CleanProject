@@ -3,17 +3,62 @@ name: Main Builder Workflow
 on: 
   workflow_dispatch: 
 
-jobs:
-  build-docker-image: 
-    name: Builder Application and Docker Image
-    runs-on: ubuntu-latest 
-    
-    steps:
-    - name: printstuff 
-      run: echo some stuff
+env:
+  AWS_REGION: eu-north-1                    
+  ECR_REPOSITORY: images/clean-application    
+  ECS_SERVICE: clean-application-api-service             
+  ECS_CLUSTER: CleanApplicationCluster              
+  ECS_TASK_DEFINITION: .github/workflows/cleanApplicationTaskDefinition.json 
+  CONTAINER_NAME: clean-application-api  
 
-  deployment-job:
-    name: Something else
+jobs:
+  build-docker-image-push-ecr: 
+    name: Build Docker Image / Push to ECR
+    runs-on: ubuntu-latest 
+
+    outputs:
+      final-image: ${{steps.build-image.outputs.image}}
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    
+    - name: Set up .Net Core CLI 
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0'
+    
+    - name: Restore Dependancies
+      run: dotnet restore CleanProject.sln
+
+    - name: Build and Publish
+      run: dotnet publish ./CleanProject/CleanProject.API.csproj -c Release -o ./publish
+
+    - name: Configure AWS credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+    
+    - name: Build, tag, and push image to Amazon ECR
+      id: build-image
+      env:
+        ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
+        IMAGE_TAG: ${{ github.sha }}
+      run: |
+        docker build -f ./CleanProject/Dockerfile -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+
+  deploy-ecs:
+    name: Deploy to AWS ECS
     uses: ./.github/workflows/shared.yml
     with:
-      my-text: sahil
+      ecr-repository: $ECR_REPOSITORY
+      ecs-cluster: $ECS_CLUSTER
+      ecs-service: $ECS_SERVICE
+      ecs-task_definition-path: $ECS_TASK_DEFINITION
+      ecs-container-name: $CONTAINER_NAME
+      ecs-container-image: ${{steps.build-image.outputs.final-image}}
+
