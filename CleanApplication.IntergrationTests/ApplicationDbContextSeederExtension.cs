@@ -1,10 +1,9 @@
-﻿using System;
-using CleanProject.Persistance.Context;
+﻿using CleanProject.Persistance.Context;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace CleanApplication.IntergrationTests
 {
-	public static class ApplicationDbContextSeederExtension
+    public static class ApplicationDbContextSeederExtension
 	{
 		public static void EnsureCreatedAndSeed(this IServiceProvider serviceProvider, Action<ApplicationDbContext> action)
 		{

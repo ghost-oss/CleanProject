@@ -1,5 +1,4 @@
 ﻿using CleanProject.Application.Abstractions;
-using CleanProject.Application.Services;
 using CleanProject.Persistance.Context;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -9,7 +8,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 
 namespace CleanApplication.IntergrationTests
 {
-	internal class CustomWebApplicationFactory : WebApplicationFactory<Program>
+    internal class CustomWebApplicationFactory : WebApplicationFactory<Program>
 	{
         protected override void ConfigureWebHost(IWebHostBuilder builder)
         {
