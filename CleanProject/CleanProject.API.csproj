@@ -15,12 +15,14 @@
     <PackageReference Include="Serilog.AspNetCore" Version="6.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.16" />
+    <PackageReference Include="Microsoft.Extensions.Http.Resilience" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="Microsoft.VisualStudio.Web.CodeGeneration.Design" />
     <None Remove="Microsoft.EntityFrameworkCore.Tools" />
     <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Resilience\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,5 +36,8 @@
 
   <ItemGroup>
      <InternalsVisibleTo Include="CleanApplication.IntergrationTests" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resilience\" />
   </ItemGroup>
 </Project>

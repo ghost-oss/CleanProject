@@ -2,6 +2,7 @@ using CleanProject.Application.Abstractions;
 using CleanProject.Application.Features.Employees.Commands;
 using CleanProject.Application.Features.Employees.Queries;
 using CleanProject.Application.Models;
+using CleanProject.Application.Services;
 using CleanProject.Domain.Filters;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -14,12 +15,14 @@ namespace CleanProject.API.Controllers
     {
         private readonly IMediator mediator;
         private readonly ILogger logger;
-        private readonly ICorrelationAccessor accessor; 
-        public EmployeeController(IMediator mediator, ILogger<EmployeeController> logger, ICorrelationAccessor accessor)
+        private readonly ICorrelationAccessor accessor;
+        private readonly ICleanProjectClientService cleanProjectClientService;
+        public EmployeeController(IMediator mediator, ILogger<EmployeeController> logger, ICorrelationAccessor accessor, ICleanProjectClientService cleanProjectClientService)
         {
             this.mediator = mediator;
             this.logger = logger;
             this.accessor = accessor;
+            this.cleanProjectClientService = cleanProjectClientService;
         }
 
 
@@ -29,6 +32,12 @@ namespace CleanProject.API.Controllers
             logger.LogWarning("HEY THERE BUDDY Salloooyyy!!!!!!!");
             return Ok(accessor.GetCorrelationId() + " Richard");
 
+        }
+
+        [HttpGet, Route("testapi")]
+        public async Task<IActionResult> GetTestApicALL()
+        {
+            return Ok(await cleanProjectClientService.GetAsync());
         }
 
 

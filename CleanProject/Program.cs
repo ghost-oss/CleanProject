@@ -3,6 +3,7 @@ using CleanProject.Persistance;
 using CleanProject.Application.Middleware;
 using Serilog;
 using Serilog.Formatting.Json;
+using CleanProject.API;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,7 +25,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 
 //Register dependancies
-builder.Services.RegisterApplication()
+builder.Services
+    .RegisterApi()
+    .RegisterApplication()
     .RegisterPersistance(builder.Configuration);
 
 //Locally this isn't needed, but for docker it is! This loads the relevent appsettings.json file within the docker image. Without this, it can't find it.

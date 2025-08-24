@@ -3,7 +3,6 @@ using CleanProject.Application.Behaviours;
 using CleanProject.Application.Services;
 using CleanProject.Domain.Validator;
 using FluentValidation;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 namespace CleanProject.Application
 {
@@ -23,10 +22,14 @@ namespace CleanProject.Application
 
             //Register generic validator 
             services.AddScoped(typeof(ICommonValidator<>), typeof(Validator<>));
-            
+
+            services.AddScoped<ICleanProjectClientService, CleanProjectClientService>();
+
+
+            //HttpcontextAccessor allows us to access the httpcontext outside of the controller.cs files such as services/middlewares etc
             services.AddHttpContextAccessor();
             services.AddScoped<ICorrelationAccessor, CorrelationAccessor>();
-
+            
             return services;
         }
     }
